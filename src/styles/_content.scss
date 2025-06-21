@@ -1,0 +1,51 @@
+
+.gridContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2em;
+    // background-color: red;
+}
+
+.content{
+    margin-top: 60px;
+
+    &__.aside{
+        grid-column: -1 / 3 ;
+        grid-row: 1 / -1;
+        // background-color: black;
+    }
+
+    &__ask{
+        font-size: 3.1em;
+        text-align: left;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+
+       p{
+        font-size: 1.5em;
+        line-height: 32px;
+       }
+       
+       button{
+        margin-top: auto;
+        width: 270px;
+        padding: 1.7em;
+        border: none;
+       }
+    }
+}
+
+
+.image{
+    width: 100%;
+    grid-column: 1 / 3;
+}
+
+
+
+

@@ -12,7 +12,7 @@
     "terser": "terser src/scripts/main.js -o build/scripts/main.min.js -c -m",
     "watch-js": "chokidar \"src/scripts/**/*.js\" -c \"npm run terser\"",
 
-    "dev": "npm-run-all --parallel sass watch-img watch-js",
+    "dev": "npm-run-all --parallel watch-img watch-js watch-sass",
     "build": "npm run sass && npm run copy-img && npm run terser",
 
     "test": "echo \"Error: no test specified\" && exit 1"
