@@ -1,11 +1,24 @@
+@use 'vars';
 @use 'header';
 @use 'content';
+
+
+// .inter-<uniquifier> {
+//   font-family: "Inter", sans-serif;
+//   font-optical-sizing: auto;
+//   font-weight: <weight>;
+//   font-style: normal;
+// }
 
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body, html{
+    font-family: vars.$fontFamily;
 }
 
 
@@ -21,11 +34,6 @@
     @media (min-width: 768px) and (max-width: 1439px) {
         width: 90%;
     }
-}
-
-.containerGrid{
-    // display: grid;
-    // grid-template-columns: ;
 }
 
 

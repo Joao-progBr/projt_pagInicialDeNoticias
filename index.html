@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./build/styles/main.css">
 
   <title>Frontend Mentor | News homepage</title>
 
-  <style>
+  <!-- <style>
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -18,7 +23,7 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -50,9 +55,9 @@
       <div class="gridContainer">
         <img class="image" src="./build/assets/img/image-web-3-desktop.jpg" alt="">
         <aside class="content__aside">
-          <h1 class="content__aside__title">
+          <h2 class="content__aside__title">
             New
-          </h1>
+          </h2>
           <div class="content__aside__aboutCars">
             <h2>
               <b>Hydrogen VS Electric Cars</b>
@@ -81,7 +86,7 @@
 
 
         <div class="content__ask">
-          <h2>The Bright Future of Web 3.0?</h2>
+          <h1>The Bright Future of Web 3.0?</h1>
         </div>
         <div class="content__text">
           <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the
@@ -93,40 +98,50 @@
         </div>
 
 
-        <article>
+        <article class="content__articlesCard1 articles">
           <img src="./build/assets/img/image-retro-pcs.jpg" alt="">
-          <div>
+          <div class="content__articlesCard1__sections">
             <h3>01</h3>
-            <p>Reviving Retro PCs</p>
-            <p>What happens when old PCs are given modern upgrades?</p>
+            <p>
+              <b>Reviving Retro PCs</b>
+            </p>
+            <span>What happens when old PCs are given modern upgrades?</span>
           </div>
         </article>
-        <article>
-          <div>
-            <img src="./build/assets/img/image-top-laptops.jpg" alt="">
+        <article class="content__articlesCard2 articles">
+          <img src="./build/assets/img/image-top-laptops.jpg" alt="">
+          <div class="content__articlesCard2__sections">
             <h3>02</h3>
-            <p>Top 10 Laptops of 2022</p>
-            <p>Our best picks for various needs and budgets.</p>
+            <p>
+              <b>Top 10 Laptops of 2022</b>
+            </p>
+            <span>Our best picks for various needs and budgets.</span>
           </div>
         </article>
-        <article>
+        <article class="content__articlesCard3 articles">
           <img src="./build/assets/img/image-gaming-growth.jpg" alt="">
-          <h3>03</h3>
-          <p> The Growth of Gaming</p>
-          <p>How the pandemic has sparked fresh opportunities.</p>
+          <div class="content__articlesCard3__sections">
+            <h3>03</h3>
+            <p>
+              <b>The Growth of Gaming</b>
+            </p>
+            <span>How the pandemic has sparked fresh opportunities.</span>
+          </div>
         </article>
       </div>
     </section>
-
 
   </div>
 
 
   <!--
 
-  estilizar os articles e deixar responsivo
+  ANTES DE IR PARA O RESPONSIVO
 
-
+  ajustar font-family do button
+  ajustar tamanho das fontes
+  criar variaveis
+  refazer uma refatoração  
 
 
   <div class="attribution">
