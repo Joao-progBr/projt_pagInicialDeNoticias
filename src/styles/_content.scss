@@ -1,9 +1,11 @@
+@use 'vars';
+
 @mixin articles($margin:2em){
     margin-left: $margin;
 
     h3{
         font-size: 3em;
-        color: hsl(5, 85%, 63%);
+        color: vars.$colorOrange;
     }
 
     p{
@@ -13,9 +15,25 @@
 
     span{
         line-height: 1.5em;
-        font-size: 1.2em;
-        color: #5d5f79;
+        font-size: vars.$fontDefault;
+        color: vars.$colorSecundaryGrey;
     }
+}
+
+@mixin aside(){
+     margin-top: 2em;
+
+            h2, h3{
+                font-size: 1.7em;
+                color: vars.$colorSecundaryWhite;
+            }
+
+            p{
+                margin-top: .5em;
+                line-height: 1.5em;
+                color: vars.$colorGrey;
+                font-size: vars.$fontDefault;
+            }
 }
 
 .gridContainer{
@@ -24,7 +42,7 @@
     // grid-template-columns: 1fr 1fr 1fr;
     // grid-template-rows: auto auto;
     grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
+    grid-template-areas:
     "image image aside"
     "title text aside"
     "title text aside"
@@ -43,7 +61,7 @@
     margin-top: 60px;
 
     &__ask{
-        font-size: 3.1em;
+        font-size: 3em;
         text-align: left;
         grid-area: title;
     }
@@ -54,7 +72,7 @@
         grid-area: text;
 
         p{
-            font-size: 1.5em;
+            font-size: 1.3em;
             line-height: 32px;
         }
        
@@ -63,19 +81,21 @@
             width: 270px;
             padding: 1em;
             border: none;
-            background-color: hsl(5, 85%, 63%);
+            background-color: vars.$colorOrange;
             text-transform: uppercase;
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: bold;
             letter-spacing: 4px;
             cursor: pointer;
             border-radius: 3px;
             transition: color, background-Color .4s ease;
+            font-family: vars.$fontFamily;
+
 
             &:hover{
-                background-color: hsl(240, 100%, 5%);
-                color: hsl(36, 100%, 99%);
-                transition: color, background-Color .4s ease;
+                background-color: vars.$colorBlack;
+                color: vars.$colorSecundaryWhite;
+                
             }
         }
     }
@@ -83,8 +103,7 @@
 
     // ASIDE
     &__aside{
-        background-color: hsl(240, 100%, 5%);
-        color: #fff;
+        background-color: vars.$colorBlack;
         padding: 2em;
         grid-area: aside;
         // grid-column: -1 / 3 ;
@@ -92,62 +111,26 @@
         // background-color: black;
 
         &__title{
-            color: hsl(35, 77%, 62%);
+            color: vars.$colorYellow;
             font-size: 3em;
         }
 
         &__aboutCars{
-            margin-top: 2em;
-
-            h2{
-                font-size: 1.7em;
-                color: hsl(36, 100%, 99%);
-            }
-
-            p{
-                margin-top: .5em;
-                line-height: 1.5em;
-                color: hsl(233, 8%, 79%);
-                font-size: 1.2em;
-            }
+            @include aside;
         }
 
         &__aboutIa{
-            margin-top: 2em;
-
-            h2{
-                font-size: 1.7em;
-                color: hsl(36, 100%, 99%);
-            }
-
-            p{
-                margin-top: .5em;
-                line-height: 1.5em;
-                color:  hsl(233, 8%, 79%);
-                font-size: 1.2em;
-            }
+           @include aside;
         }
 
         &__aboutFunding{
-            margin-top: 2em;
-
-            h2{
-                font-size: 1.7em;
-                color: hsl(36, 100%, 99%);
-            }
-
-            p{
-                margin-top: .5em;
-                line-height: 1.5em;
-                color:  hsl(233, 8%, 79%);
-                font-size: 1.2em;
-            }
+           @include aside;
         }
 
         &__divider{
             height: 1px;
-            border-color: #5d5f79;
-            margin: 3em 0;
+            border-color: vars.$colorSecundaryGrey;
+            margin: 3.5em 0;
         }  
     }
 

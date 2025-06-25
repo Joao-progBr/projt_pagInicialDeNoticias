@@ -27,13 +27,77 @@ body, html{
     width: 100%;
     margin: 0 auto;
 
-    @media (max-width:767px) {
-        width: 90%;
-    }
-
-    @media (min-width: 768px) and (max-width: 1439px) {
-        width: 90%;
-    }
 }
 
+@media (max-width:999px) {
+        .container{
+            width: 90%;
+        }
+
+        .gridContainer{
+            grid-template-areas:
+            "image"
+            "aside"
+            "title"
+            "text"
+            "card1"
+            "card2"
+            "card3";
+            grid-template-columns: 1fr;
+        }
+
+        .content{
+            
+            &__ask{
+                text-align: center;
+            }
+
+            &__text{
+                text-align: center;
+
+                &__btn{
+                    margin: 1em auto;
+                }
+            }
+        }
+
+        .articles{
+            margin: 1em 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 1000px) and (max-width: 1427px) {
+        .container{
+            width: 90%;
+        }
+
+        .gridContainer{
+            grid-template-areas:
+            "image image image"
+            "aside aside aside"
+            "title . text"
+            "card1 card2 card3";
+        }
+
+        .content__aside{
+            display: flex;
+            text-align: center;
+        }
+
+        .articles{
+            margin: 1em 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+    }
 
