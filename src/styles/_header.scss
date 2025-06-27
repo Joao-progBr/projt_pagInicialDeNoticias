@@ -6,7 +6,15 @@
     align-items: center;
     padding-top: 80px;
 
+
     &__nav{
+    }
+
+    &__menu-icon,
+    &__close-icon {
+        cursor: pointer;
+        display: none;
+        z-index: 1001;
     }
 
     &__list{
