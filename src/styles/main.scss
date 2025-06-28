@@ -21,6 +21,10 @@ body, html{
     font-family: vars.$fontFamily;
 }
 
+.no-scroll{
+    overflow: hidden;
+    height: 100vh;
+}
 
 .container{
     max-width: 1440px;
@@ -32,130 +36,166 @@ body, html{
 //     display: none;
 // }
 
-@media (max-width:999px) {
-        .container{
-            width: 90%;
+@media (max-width:1199px) {
+    .container{
+        width: 90%;
+    }
+
+    .header {
+        &__menu-icon {
+            display: block;
         }
 
-        .header {
-            &__menu-icon {
-                display: block;
+        &__nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 70%;
+            background-color: white;
+            padding: 2em;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+                
+            &.active {
+                transform: translateX(0px);
+                transition: transform 0.3s ease-in-out;
+                visibility: visible;
+                opacity: 1;
+                pointer-events: auto;   
             }
 
-            &__nav {
-                position: fixed;
-                top: 0;
-                right: 0;
-                height: 100vh;
-                width: 70%;
-                background-color: white;
-                padding: 2em;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in-out;
-                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-                z-index: 2000;
+            .header__close-icon {
+                display: block;
+                margin-top: 3em;
+                align-self: flex-end;
+                margin-bottom: 2em;
+            }
+
+            .header__list {
                 display: flex;
                 flex-direction: column;
-                visibility: hidden;
-                opacity: 0;
-                pointer-events: none;
+                gap: 1.5em;
+
+                li a {
+                    font-size: 1.2em;
+                }
+            }
+        }    
+
+        // Oculta menu desktop por padrão no mobile
+        // &__nav ul {
+        //     display: none;
+        // }
+    }
+
+    .gridContainer{
+        grid-template-areas:
+        "image"
+        "aside"
+        "title"
+        "text"
+        "card1"
+        "card2"
+        "card3";
+        grid-template-columns: 1fr;
+    }
+
+    .content{
+        &__ask{
+            text-align: center;
+        }
+
+        &__text{
+            text-align: center;
+
+            &__btn{
+                margin: 1em auto;
+            }
+        }
+
+        &__articlesCard1__sections,
+        &__articlesCard2__sections,
+        &__articlesCard3__sections{
+            margin: 0;
+            width: 50%;
+        }
+    }
+
+    .articles{
+        margin: 1em 0;
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1427px) {
+    .container{
+        width: 90%;
+    }
+
+    .gridContainer{
+        grid-template-areas:
+        "image image image"
+        "aside aside aside"
+        "title title text"
+        "card1 card2 card3";
+    }
+
+    .content{
+
+        &__aside{
+            display: flex;
                 
-                &.active {
-                    transform: translateX(0px);
-                    transition: transform 0.3s ease-in-out;
-                    visibility: visible;
-                    opacity: 1;
-                    pointer-events: auto;
-                    
-                }
-
-                .header__close-icon {
-                    margin-top: 3em;
-                    display: block;
-                    align-self: flex-end;
-                    margin-bottom: 2em;
-                }
-
-                .header__list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5em;
-
-                    li a {
-                        font-size: 1.2em;
-                    }
-                }
+            &__title{
+                display: none;
             }
-
-            // Oculta menu desktop por padrão no mobile
-            // &__nav ul {
-            //     display: none;
-            // }
-        }
-
-        .gridContainer{
-            grid-template-areas:
-            "image"
-            "aside"
-            "title"
-            "text"
-            "card1"
-            "card2"
-            "card3";
-            grid-template-columns: 1fr;
-        }
-
-        .content{
-            &__ask{
+    
+            &__aboutCars{
+                text-align: left;
+                width: 400px;
+            }
+    
+            &__aboutIa{
                 text-align: center;
+                width: 400px;
             }
-
-            &__text{
-                text-align: center;
-
-                &__btn{
-                    margin: 1em auto;
-                }
+    
+            &__aboutFunding{
+                text-align: right;
+                width: 400px;
             }
         }
 
-        .articles{
-            margin: 1em 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        &__text__btn{
+            margin-top: 1em;
+        }
 
-            text-align: center;
+        &__articlesCard1__sections,
+        &__articlesCard2__sections,
+        &__articlesCard3__sections{
+            margin: 0;
+            width: 50%;
         }
     }
 
-    @media (min-width: 1000px) and (max-width: 1427px) {
-        .container{
-            width: 90%;
-        }
-
-        .gridContainer{
-            grid-template-areas:
-            "image image image"
-            "aside aside aside"
-            "title . text"
-            "card1 card2 card3";
-        }
-
-        .content__aside{
-            display: flex;
-            text-align: center;
-        }
-
-        .articles{
-            margin: 1em 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-        }
+    .articles{
+        margin: 1em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
+}
 

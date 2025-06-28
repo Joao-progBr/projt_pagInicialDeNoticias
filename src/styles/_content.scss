@@ -8,32 +8,49 @@
         color: vars.$colorOrange;
     }
 
-    p{
+    a{
         margin: .7em 0;
         font-size: 1.5em;
+        display: block;
+        cursor: pointer;
+        transition: color .3s ease;
+        text-decoration: none;
+        color: vars.$colorBlack;
+
+        &:hover{
+            color: vars.$colorOrange;
+            transition: color .3s ease;
+        }
     }
 
     span{
         line-height: 1.5em;
         font-size: vars.$fontDefault;
-        color: vars.$colorSecundaryGrey;
+        
     }
 }
 
 @mixin aside(){
-     margin-top: 2em;
+    margin-top: 2em;
 
-            h2, h3{
-                font-size: 1.7em;
-                color: vars.$colorSecundaryWhite;
-            }
+    h2, h3{
+        font-size: 1.7em;
+        color: vars.$colorSecundaryWhite;
+        transition: color .3s ease;
+    }
 
-            p{
-                margin-top: .5em;
-                line-height: 1.5em;
-                color: vars.$colorGrey;
-                font-size: vars.$fontDefault;
-            }
+    h3:hover{
+        cursor: pointer;
+        color: vars.$colorYellow;
+        transition: color .3s ease;
+    }
+
+    p{
+        margin-top: .5em;
+        line-height: 1.5em;
+        color: vars.$colorGrey;
+        font-size: vars.$fontDefault;
+    }
 }
 
 .gridContainer{
@@ -95,7 +112,6 @@
             &:hover{
                 background-color: vars.$colorBlack;
                 color: vars.$colorSecundaryWhite;
-                
             }
         }
     }
@@ -144,7 +160,16 @@
             height: 80%;
             border-radius: 6px;
             object-fit: cover;
+            // max-width: 100%;
+            // height: auto;
+            // border-radius: 6px;
+            // object-fit: cover;
         }
+    }
+
+    &__articlesCards__flex{
+        display: flex;
+        margin: 4em 0;
     }
 
     &__articlesCard1{
