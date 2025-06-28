@@ -1,6 +1,7 @@
 @use 'vars';
 @use 'header';
 @use 'content';
+@use 'footer';
 
 
 // .inter-<uniquifier> {
@@ -31,10 +32,6 @@ body, html{
     width: 100%;
     margin: 0 auto;
 }
-
-// .header__menu-icon{
-//     display: none;
-// }
 
 @media (max-width:1199px) {
     .container{
@@ -124,18 +121,28 @@ body, html{
         &__articlesCard1__sections,
         &__articlesCard2__sections,
         &__articlesCard3__sections{
-            margin: 0;
-            width: 50%;
+            margin: 0 auto;
+            width: 90%;
+            text-align: center;
         }
     }
 
     .articles{
         margin: 1em 0;
         display: flex;
-        // flex-direction: column;
+        flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         text-align: center;
+        gap: 2em;
+
+        img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 6px;
+            margin: 0 auto;
+        }
     }
 }
 
