@@ -1,0 +1,21 @@
+@use 'vars';
+.footer{
+    background-color: black;
+    padding: 2em;
+    font-size: 1.3em;
+    text-align: center;
+    
+    p{
+        color: vars.$colorGrey ;
+    }
+    
+    a{
+        color: vars.$colorSecundaryWhite;
+        cursor: pointer;
+
+        &:hover{
+            color: vars.$colorYellow;
+            transition: color .3s ease;
+        }
+    }
+}
